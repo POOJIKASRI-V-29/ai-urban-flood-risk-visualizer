@@ -1,0 +1,21 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "name": "Zone 1" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [72.85, 19.05],
+            [72.92, 19.05],
+            [72.92, 19.12],
+            [72.85, 19.12],
+            [72.85, 19.05]
+          ]
+        ]
+      }
+    }
+  ]
+}
