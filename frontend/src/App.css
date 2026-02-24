@@ -1,62 +1,92 @@
+/* App.css - Global resets for Urban Flood Risk Visualizer */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
-  font-family: "Segoe UI", sans-serif;
-  background: linear-gradient(to bottom, #7aa5d8, #4a6fa5);
+  padding: 0;
+  background: #0a1628;
+  overflow-x: hidden;
 }
 
-.dashboard {
-  padding: 20px;
-}
-
-.header {
-  text-align: center;
-  color: white;
-  margin-bottom: 20px;
-}
-
-.main-grid {
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  gap: 20px;
-}
-
-.card {
-  background: white;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-}
-
+/* Slider custom styling */
 input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  background: linear-gradient(90deg, #2563eb 0%, #93c5fd 100%);
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+  display: block;
   width: 100%;
-  margin: 10px 0;
+  margin-bottom: 14px;
 }
 
-select {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 15px;
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: white;
+  border: 3px solid #2563eb;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.4);
+  cursor: pointer;
+  transition: transform 0.15s;
 }
 
-.analyze-btn {
-  width: 100%;
-  padding: 12px;
-  margin-top: 20px;
-  background: #2f5db3;
-  color: white;
-  border: none;
-  border-radius: 6px;
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: white;
+  border: 3px solid #2563eb;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.4);
   cursor: pointer;
 }
 
-.high {
-  color: red;
+/* Select styling */
+select {
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23475569' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 32px !important;
+  cursor: pointer;
 }
 
-.moderate {
-  color: orange;
+/* Button hover */
+button:hover:not(:disabled) {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.55) !important;
 }
 
-.low {
-  color: green;
+button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+button {
+  transition: all 0.2s ease;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a1628;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e3a6e;
+  border-radius: 4px;
 }
